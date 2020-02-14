@@ -18,19 +18,19 @@ ModSecurity Setup [apache] Reverse proxy
 14. nano /etc/apache2/mods-available/security2.conf
 
 <IfModule security2_module>
-# Default Debian dir for modsecurity's persistent data
+#Default Debian dir for modsecurity's persistent data
 SecDataDir /var/cache/modsecurity
 
-# Include all the *.conf files in /etc/modsecurity.
-# Keeping your local configuration in that directory
-# will allow for an easy upgrade of THIS file and
-# make your life easier
+#Include all the *.conf files in /etc/modsecurity.
+#Keeping your local configuration in that directory
+#will allow for an easy upgrade of THIS file and
+#make your life easier
 IncludeOptional /opt/modsecurity/*.conf  #change the dir location based on your modsecurity install
 </IfModule>
 
 15. nano /etc/apache2/mods-available/security2.load
 
-# Depends: unique_id
+#Depends: unique_id
 LoadFile libxml2.so.2
 LoadModule security2_module /usr/lib/apache2/modules/mod_security2.so
 
@@ -66,7 +66,7 @@ Apache2 Reverse Proxy
 
 Add the below line in /etc/apache2/site-available/000-default.conf
 
- ''' ProxyPass / http://10.138.114.231:7070/   # Based on your web server IP and Port
+     ProxyPass / http://10.138.114.231:7070/   # Based on your web server IP and Port
      ProxyPassReverse / http://10.138.114.231:7070/ # Based on your web server IP and Port
      ProxyPreserveHost On # Preserve the Host header '''' 
  
