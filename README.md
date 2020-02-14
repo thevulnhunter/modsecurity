@@ -32,17 +32,17 @@
 
 15. nano /etc/apache2/mods-available/security2.load
 
-#Depends: unique_id
-LoadFile libxml2.so.2
-LoadModule security2_module /usr/lib/apache2/modules/mod_security2.so
+        #Depends: unique_id
+        LoadFile libxml2.so.2
+        LoadModule security2_module /usr/lib/apache2/modules/mod_security2.so
 
 16. a2enmod security2
 17. a2enmod http_proxy
 18. service apache2 start 
 
-Now check in apache error.log to validate the ModSecurity.  
+Now check in apache 'error.log' to validate the ModSecurity.  
 
-Setting up OWASP CRS rules in ModSecurity
+### Setting up OWASP CRS rules in ModSecurity
 
 1. cd /etc/apache/modsecurity
 2. wget https://github.com/SpiderLabs/owasp-modsecurity-crs/archive/v3.2.0.tar.gz # url https://coreruleset.org/ to download
@@ -57,14 +57,14 @@ Setting up OWASP CRS rules in ModSecurity
     assumes you've cloned CRS into modsecurity.d/owasp-modsecurity-crs). You
     can alternatively place these in any config file included by Apache:
 
-    <IfModule security2_module>
+       <IfModule security2_module>
                 Include modsecurity.d/owasp-modsecurity-crs/crs-setup.conf
                 Include modsecurity.d/owasp-modsecurity-crs/rules/*.conf
-    </IfModule>
+       </IfModule>
 8. Restart web server
 
-Apache2 Reverse Proxy
----------------------
+### Apache2 Reverse Proxy
+
 
 Add the below line in /etc/apache2/site-available/000-default.conf
 
