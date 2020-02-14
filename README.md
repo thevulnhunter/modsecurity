@@ -68,7 +68,7 @@ Add the below line in /etc/apache2/site-available/000-default.conf
 
      ProxyPass / http://10.138.114.231:7070/   # Based on your web server IP and Port
      ProxyPassReverse / http://10.138.114.231:7070/ # Based on your web server IP and Port
-     ProxyPreserveHost On # Preserve the Host header '''' 
+     ProxyPreserveHost On # Preserve the Host header 
  
  
 
