@@ -1,6 +1,5 @@
 # ModSecurity
-ModSecurity Setup [apache] Reverse proxy
------------------
+## ModSecurity Setup [apache] Reverse proxy
 
 1. apt-get install apache2
 2. mkdir /var/log/modsecurity #save the modsecurity audit log
@@ -19,16 +18,18 @@ ModSecurity Setup [apache] Reverse proxy
 
 '''
 
-<IfModule security2_module>
-#Default Debian dir for modsecurity's persistent data
-SecDataDir /var/cache/modsecurity
-#Include all the *.conf files in /etc/modsecurity.
-#Keeping your local configuration in that directory
-#will allow for an easy upgrade of THIS file and
-#make your life easier
-IncludeOptional /opt/modsecurity/*.conf  #change the dir location based on your modsecurity install
-</IfModule>
+     <IfModule security2_module>
+     #Default Debian dir for modsecurity's persistent data
+     SecDataDir /var/cache/modsecurity
+     #Include all the *.conf files in /etc/modsecurity.
+     #Keeping your local configuration in that directory
+     #will allow for an easy upgrade of THIS file and
+     #make your life easier
+     IncludeOptional /opt/modsecurity/*.conf  #change the dir location based on your modsecurity install
+     </IfModule>
+
 '''
+
 15. nano /etc/apache2/mods-available/security2.load
 
 #Depends: unique_id
