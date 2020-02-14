@@ -40,7 +40,7 @@
 17. a2enmod http_proxy
 18. service apache2 start 
 
-Now check in apache 'error.log' to validate the ModSecurity.  
+Now check in apache `error.log` to validate the ModSecurity.  
 
 ### Setting up OWASP CRS rules in ModSecurity
 
@@ -49,8 +49,8 @@ Now check in apache 'error.log' to validate the ModSecurity.
 3. tar -xvf v3.2.0.tar.gz
 4. cd <unpacked dir>
 5. rename crs-setup.conf.example to crs-setup.conf | `mv /etc/apache/modsecurity/<dir>/rs-setup.conf.example` /etc/apache/modsecurity/<dir>/rs-setup.conf
-6. Rename rules/REQUEST-900-EXCLUSION-RULES-BEFORE-CRS.conf.example and
-    rules/RESPONSE-999-EXCLUSION-RULES-AFTER-CRS.conf.example to remove the
+6. Rename **rules/REQUEST-900-EXCLUSION-RULES-BEFORE-CRS.conf.example and
+    rules/RESPONSE-999-EXCLUSION-RULES-AFTER-CRS.conf.example** to remove the
     '.example' extension. This will allow you to add exclusions without updates
     overwriting them in the future.
 7. Add the following line to your httpd.conf/apache2.conf (the following
