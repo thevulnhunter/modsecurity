@@ -48,7 +48,7 @@ Now check in apache 'error.log' to validate the ModSecurity.
 2. wget https://github.com/SpiderLabs/owasp-modsecurity-crs/archive/v3.2.0.tar.gz # url https://coreruleset.org/ to download
 3. tar -xvf v3.2.0.tar.gz
 4. cd <unpacked dir>
-5. rename crs-setup.conf.example to crs-setup.conf | mv /etc/apache/modsecurity/<dir>/rs-setup.conf.example /etc/apache/modsecurity/<dir>/rs-setup.conf
+5. rename crs-setup.conf.example to crs-setup.conf | 'mv /etc/apache/modsecurity/<dir>/rs-setup.conf.example' /etc/apache/modsecurity/<dir>/rs-setup.conf
 6. Rename rules/REQUEST-900-EXCLUSION-RULES-BEFORE-CRS.conf.example and
     rules/RESPONSE-999-EXCLUSION-RULES-AFTER-CRS.conf.example to remove the
     '.example' extension. This will allow you to add exclusions without updates
@@ -66,7 +66,7 @@ Now check in apache 'error.log' to validate the ModSecurity.
 ### Apache2 Reverse Proxy
 
 
-Add the below line in /etc/apache2/site-available/000-default.conf
+Add the below line in **/etc/apache2/site-available/000-default.conf**
 
      ProxyPass / http://10.138.114.231:7070/   # Based on your web server IP and Port
      ProxyPassReverse / http://10.138.114.231:7070/ # Based on your web server IP and Port
