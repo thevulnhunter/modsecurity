@@ -16,7 +16,7 @@ ModSecurity Setup [apache] Reverse proxy
 12. make install
 13. cp /usr/local/modsecurity/lib/mod_security2.so /usr/lib/apache2/modules #copying security module to apache module dir
 14. nano /etc/apache2/mods-available/security2.conf
-
+'''
 <IfModule security2_module>
 #Default Debian dir for modsecurity's persistent data
 SecDataDir /var/cache/modsecurity
@@ -27,7 +27,7 @@ SecDataDir /var/cache/modsecurity
 #make your life easier
 IncludeOptional /opt/modsecurity/*.conf  #change the dir location based on your modsecurity install
 </IfModule>
-
+'''
 15. nano /etc/apache2/mods-available/security2.load
 
 #Depends: unique_id
