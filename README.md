@@ -55,7 +55,7 @@ Setting up OWASP CRS rules in ModSecurity
     assumes you've cloned CRS into modsecurity.d/owasp-modsecurity-crs). You
     can alternatively place these in any config file included by Apache:
 
-        <IfModule security2_module>
+    <IfModule security2_module>
                 Include modsecurity.d/owasp-modsecurity-crs/crs-setup.conf
                 Include modsecurity.d/owasp-modsecurity-crs/rules/*.conf
     </IfModule>
@@ -65,9 +65,10 @@ Apache2 Reverse Proxy
 ---------------------
 
 Add the below line in /etc/apache2/site-available/000-default.conf
- ProxyPass / http://10.138.114.231:7070/   # Based on your web server IP and Port
- ProxyPassReverse / http://10.138.114.231:7070/ # Based on your web server IP and Port
- ProxyPreserveHost On # Preserve the Host header 
+
+ ''' ProxyPass / http://10.138.114.231:7070/   # Based on your web server IP and Port
+     ProxyPassReverse / http://10.138.114.231:7070/ # Based on your web server IP and Port
+     ProxyPreserveHost On # Preserve the Host header '''' 
  
  
 
